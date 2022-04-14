@@ -1,0 +1,22 @@
+{
+  "name": "bot-discord",
+  "version": "1.0.0",
+  "description": "Create a discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'run'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlxisHenry/bot-discord.git"
+  },
+  "author": "Alexis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlxisHenry/bot-discord/issues"
+  },
+  "homepage": "https://github.com/AlxisHenry/bot-discord#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
