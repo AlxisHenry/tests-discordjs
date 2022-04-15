@@ -3,6 +3,7 @@ const { Client, Intents } = require("discord.js");
 const BeerBot = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
+const { joinVoiceChannel } = require('@discordjs/voice');
 
 // Lancement et configuration du bot
 BeerBot.on("ready", async () => {
@@ -12,6 +13,21 @@ BeerBot.on("ready", async () => {
     BeerBot.user.setActivity("Ask me with ! 🚀", {type: 'LISTENING'})
 
 });
+
+BeerBot.on("messageCreate", async message => {
+
+    if (message.author.bot) { return false; }
+
+    message.channel.send(message)
+    message.channel.send(message.member.voice.channel.id)
+
+    joinVoiceChannel({
+        channelId: message.member.voice.channel.id,
+        guildId: message.guild.id,
+        adapterCreator: message.guild.voiceAdapterCreator
+    })
+
+})
 
 BeerBot.login(Configs.token);
 
