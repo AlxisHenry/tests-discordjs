@@ -4,7 +4,7 @@
   "description": "Create a discord bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'run'"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
